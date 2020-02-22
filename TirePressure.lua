@@ -97,13 +97,17 @@ function TirePressure.registerEventListeners(vehicleType)
     SpecializationUtil.registerEventListener(vehicleType, "onRegisterActionEvents", TirePressure)
 end
 
+function TirePressure.registerOverwrittenFunctions(vehicleType)
+    SpecializationUtil.registerOverwrittenFunction(vehicleType, "getCanBeSelected", TirePressure.getCanBeSelected)
+end
+
 function TirePressure:onRegisterActionEvents(isActiveForInput, isActiveForInputIgnoreSelection)
     if self.isClient then
         local spec = self.spec_tirePressure
         self:clearActionEventsTable(spec.actionEvents)
 
         if spec.isActive then
-            if self:getIsActiveForInput() then
+            if isActiveForInput then
                 local _, actionEventIdInflate = self:addActionEvent(spec.actionEvents, InputAction.TP_AXIS_PRESSURE, self, TirePressure.actionEventInflatePressure, false, true, true, true, nil, nil, true)
                 local _, actionEventIdTogglePressure = self:addActionEvent(spec.actionEvents, InputAction.TP_TOGGLE_PRESSURE, self, TirePressure.actionEventTogglePressure, false, true, false, true, nil, nil, true)
 
@@ -381,6 +385,10 @@ function TirePressure:getValveLoadPercentage()
 end
 
 g_soundManager:registerModifierType("VALVE_LOAD", TirePressure.getValveLoadPercentage)
+
+function TirePressure:getCanBeSelected(superFunc)
+    return true
+end
 
 function TirePressure.actionEventInflatePressure(self, actionName, inputValue, callbackState, isAnalog)
     local spec = self.spec_tirePressure
