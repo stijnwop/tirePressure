@@ -26,19 +26,24 @@ Add the following (besides the specialization entry) to the your modDesc:
 
 <l10n>
     <text name="information_tirePressure">
-        <en>Tire pressure: %1.2f bar</en>
+        <en>Tire pressure [target: %1.2f bar] [current: %1.2f bar]</en>
+        <de>Reifenluftdruck [Soll: %1.2f bar] [Ist: %1.2f bar]</de>
     </text>
     <text name="action_toggleTirePressure">
         <en>Toggle pressure</en>
+        <de>Druck ändern</de>
     </text>
     <text name="input_TP_TOGGLE_PRESSURE">
         <en>Update pressure</en>
+        <de>Druck aktualisieren</de>
     </text>
     <text name="input_TP_AXIS_PRESSURE_1">
         <en>Inflate</en>
+        <de>Aufpumpen</de>
     </text>
     <text name="input_TP_AXIS_PRESSURE_2">
         <en>Deflate</en>
+        <de>Ablassen</de>
     </text>
 </l10n>
 
