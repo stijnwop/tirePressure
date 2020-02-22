@@ -102,15 +102,17 @@ function TirePressure:onRegisterActionEvents(isActiveForInput, isActiveForInputI
         local spec = self.spec_tirePressure
         self:clearActionEventsTable(spec.actionEvents)
 
-        if isActiveForInput then
-            local _, actionEventIdInflate = self:addActionEvent(spec.actionEvents, InputAction.TP_AXIS_PRESSURE, self, TirePressure.actionEventInflatePressure, false, true, true, true, nil, nil, true)
-            local _, actionEventIdTogglePressure = self:addActionEvent(spec.actionEvents, InputAction.TP_TOGGLE_PRESSURE, self, TirePressure.actionEventTogglePressure, false, true, false, true, nil, nil, true)
+        if spec.isActive then
+            if self:getIsActiveForInput() then
+                local _, actionEventIdInflate = self:addActionEvent(spec.actionEvents, InputAction.TP_AXIS_PRESSURE, self, TirePressure.actionEventInflatePressure, false, true, true, true, nil, nil, true)
+                local _, actionEventIdTogglePressure = self:addActionEvent(spec.actionEvents, InputAction.TP_TOGGLE_PRESSURE, self, TirePressure.actionEventTogglePressure, false, true, false, true, nil, nil, true)
 
-            g_inputBinding:setActionEventText(actionEventIdTogglePressure, g_i18n:getText("action_toggleTirePressure"))
-            g_inputBinding:setActionEventTextVisibility(actionEventIdTogglePressure, true)
-            g_inputBinding:setActionEventTextPriority(actionEventIdTogglePressure, GS_PRIO_NORMAL)
-            g_inputBinding:setActionEventActive(actionEventIdInflate, true)
-            g_inputBinding:setActionEventActive(actionEventIdTogglePressure, true)
+                g_inputBinding:setActionEventText(actionEventIdTogglePressure, g_i18n:getText("action_toggleTirePressure"))
+                g_inputBinding:setActionEventTextVisibility(actionEventIdTogglePressure, true)
+                g_inputBinding:setActionEventTextPriority(actionEventIdTogglePressure, GS_PRIO_NORMAL)
+                g_inputBinding:setActionEventActive(actionEventIdInflate, true)
+                g_inputBinding:setActionEventActive(actionEventIdTogglePressure, true)
+            end
         end
     end
 end
