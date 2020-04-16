@@ -31,22 +31,27 @@ The localisation entry.
     <text name="information_tirePressure">
         <en>Tire pressure [target: %1.2f bar] [current: %1.2f bar]</en>
         <de>Reifenluftdruck [Soll: %1.2f bar] [Ist: %1.2f bar]</de>
+        <es>Presión Neumático [Fijar en: %1.2f bar] [Actual: %1.2f bar]</es>
     </text>
     <text name="action_toggleTirePressure">
         <en>Toggle pressure</en>
         <de>Druck ändern</de>
+        <es>Cambiar presión</es>
     </text>
     <text name="input_TP_TOGGLE_PRESSURE">
         <en>Update pressure</en>
         <de>Druck aktualisieren</de>
+        <es>Actualizar presión</es>
     </text>
     <text name="input_TP_AXIS_PRESSURE_1">
         <en>Inflate</en>
         <de>Aufpumpen</de>
+        <es>Inflar</es>
     </text>
     <text name="input_TP_AXIS_PRESSURE_2">
         <en>Deflate</en>
         <de>Ablassen</de>
+        <es>Desinflar</es>
     </text>
 </l10n>
 ```
