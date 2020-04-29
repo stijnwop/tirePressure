@@ -32,7 +32,7 @@ The localisation entry.
         <en>Tire pressure [target: %1.2f bar] [current: %1.2f bar]</en>
         <de>Reifenluftdruck [Soll: %1.2f bar] [Ist: %1.2f bar]</de>
         <es>Presión Neumático [Fijar en: %1.2f bar] [Actual: %1.2f bar]</es>
-        <it>Pressione pneumatico [obiettivo: %1.2f bar] [attuale: %1.2f bar]</it>
+        <it>Pressione pneumatico [obiett.: %1.2f bar] [attuale: %1.2f bar]</it>
     </text>
     <text name="action_toggleTirePressure">
         <en>Toggle pressure</en>
