@@ -85,3 +85,8 @@ If you only want to active it for a specific configuration/configurations you wi
     </sounds>
 </tirePressure>
 ```
+
+### Please read this when your vehicle has vehicleTypeConfigurations! 
+A common mistake is that people forget to change the vehicleTypes in the vehicleTypeConfigurations. When those configurations are present the mod will default to the first configuration given, resulting in any custom vehicle type you defined to be overwritten.
+
+So, make sure you change them to your new vehicleType!
